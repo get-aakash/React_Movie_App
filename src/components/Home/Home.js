@@ -1,21 +1,17 @@
 import React, { useEffect } from 'react'
 import DefaultLayout from '../layout/DefaultLayout'
 import MovieListing from '../MovieListing/MovieListing'
-import movieApi from "../../common/apis/movieApi"
+import movieApi, { fetchData } from "../../common/apis/movieApi"
 import {APIKey} from "../../common/apis/MovieApiKey"
 const Home = () => {
 
   useEffect(()=>{
-    const movieText = "Harry"
-    const fetchMovies = async ()=>{
-      const response = await  movieApi.get(`?apiKeys = ${APIKey} &s=${movieText}&type=movie`
-      )
-      .catch((err)=>{
-        console.log("Err :", err)
-      });
-      console.log("The Response From API ", response)
+    const movieName = "Harry"
+    const display = async(movieName)=>{
+      const response = await fetchData(movieName)
+      console.log(response)
     }
-    fetchMovies()
+    display(movieName)
   },[])
   return (
     <DefaultLayout>
