@@ -19,3 +19,14 @@ export const fetchShows = async(showName)=>{
         console.log(error)
     }
 }
+
+export const getMovieorShow = async(imdbID)=>{
+    const url = `https://www.omdbapi.com/?apikey=7d7f6780&i=${imdbID}&Plot=full`
+    try{
+        const {data} = await axios.get(url)
+        
+        return data
+    }catch(error){
+        console.log(error)
+    }
+}
