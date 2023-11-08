@@ -33,8 +33,11 @@ const dispatch = useDispatch()
     <DefaultLayout>
       <div className='movie-section'>
      
-      
-     <div className="section-left">
+      {Object.keys(movie).length === 0 ?(
+      <div>Loading...</div>
+      ):(
+        <>
+        <div className="section-left">
     <div className="movie-title">{movie.Title}</div>
     <div className="movie-rating">
       <span>
@@ -77,6 +80,10 @@ const dispatch = useDispatch()
     <div className="section-right">
       <img src={movie.Poster} alt={movie.Title} />
     </div>
+    </>
+      )}
+     
+    
     </div>
     </DefaultLayout>
     
