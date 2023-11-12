@@ -19,7 +19,7 @@ const Header = () => {
     
     console.log(dispatch(addMovies(await fetchMovies(term))))
     console.log(dispatch(addShows(await fetchShows(term))))
-    console.log(term)
+    setTerm("")
   }
   return (
     <div className="header">
@@ -30,12 +30,13 @@ const Header = () => {
       </div>
       <div className="search-bar">
         <form onSubmit={submitHandler}>
-          <input type="text" placeholder='Search Movies or Shows' onChange={(e) => setTerm(e.target.value)} />
+          <input type="text" value={term} placeholder='Search Movies or Shows' onChange={(e) => setTerm(e.target.value)} />
           <button><i className='fa fa-search'></i></button>
         </form>
       </div>
       <div className="user-image">
-        <img src={user1} alt="user" />
+      <i className="user-image fa-solid fa-user"></i>
+        
       </div>
     </div>
   )

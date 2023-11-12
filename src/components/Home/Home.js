@@ -10,7 +10,7 @@ import { addShows } from '../../features/movies/showSlice'
   const dispatch = useDispatch()
   const movieName = "harry"
   const showName = "friends"
-  useEffect(()=>{
+  
     
   const  displayMovie = async(movieName)=>{
     const movieResponse = await fetchMovies(movieName)
@@ -25,7 +25,7 @@ import { addShows } from '../../features/movies/showSlice'
     
     displayMovie(movieName)
     displayShows(showName)
-  },[])
+  
   return (
     <DefaultLayout>
       <div className="banner-img"></div>

@@ -16,6 +16,7 @@ const MovieListing = () => {
     <div className='movie-wrapper'>
       <div className="movie-list">
         <h2>Movies</h2>
+        {movies === null?(<div>{console.log("world")}</div>):(<div>{console.log("hello")}</div>)}
         <div className="movie-container">
           <Slider {...Settings}>{movies.Response === "True" ? (
         movies.Search.map((movie,index)=>(
