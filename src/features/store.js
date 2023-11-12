@@ -9,6 +9,7 @@ export const store = configureStore({
         movies:moviesReducer,
         shows:showReducer,
         movie:movieReducer,
+        
     }
 })
 
